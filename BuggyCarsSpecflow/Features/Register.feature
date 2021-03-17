@@ -26,7 +26,7 @@ Examples:
 
 
 @Register @Negative
-Scenario Outline: Register with invalid data
+Scenario Outline: Not able to register with invalid data
 	And I enter data '<Login>','<First Name>','<Last Name>', '<Password>' and '<Confirm Password>'
 	When I click on the Register below
 	Then The '<Error Message>' displayed
@@ -43,7 +43,7 @@ Examples:
 | PasswordDonotMatch      | Hello      | World     | 1122qqWW~ | 1122qqWW         | Login is required        |
 
 @Register @Negative
-Scenario: Register with already registered data
+Scenario: Not able to register with already registered data
 	And I enter valid data '<Login>','<First Name>','<Last Name>', '<Password>' and '<Confirm Password>'
 	When I click on the Register below
 	Then I register successfully

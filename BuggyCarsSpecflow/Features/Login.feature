@@ -14,7 +14,7 @@ Scenario: Login with valid data
 	| moya       | 1122qqWW~ |
 
 @Login @Negative
-Scenario Outline: Login with invalid data
+Scenario Outline: Not able to login with invalid data
 	And I enter '<Login Name>' and '<Password>'
 	When I click Login button
 	Then I login failed

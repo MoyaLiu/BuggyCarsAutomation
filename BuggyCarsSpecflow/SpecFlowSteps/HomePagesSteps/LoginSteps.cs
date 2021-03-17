@@ -12,50 +12,50 @@ namespace BuggyCarsSpecflow.SpecFlowSteps.HomePagesSteps
     [Binding]
     public sealed class LoginSteps
     {
-        HomePage homePage = null;
+        LoginPage loginPage = null;
         IWebDriver webDriver = null;
 
         public LoginSteps(IWebDriver driver)
         {
             webDriver = driver;
-            homePage = new HomePage(webDriver);
+            loginPage = new LoginPage(webDriver);
         }
 
         [Given(@"I enter '(.*)' and '(.*)'")]
         public void GivenIEnterAnd(string loginName, string password)
         {
-            homePage.InputLoginName(loginName);
-            homePage.InputPassword(password);
+            loginPage.InputLoginName(loginName);
+            loginPage.InputPassword(password);
         }
 
         [When(@"I click Login button")]
         public void WhenIClickLoginButton()
         {
-            homePage.ClickLogin();
+            loginPage.ClickLogin();
         }
 
         [Then(@"I login successfully")]
         public void ThenILoginSuccessfully()
         {
-            Assert.IsTrue(homePage.LogoutDisplayed());
+            Assert.IsTrue(loginPage.LogoutDisplayed());
         }
 
         [Then(@"I login failed")]
         public void ThenILoginFailed()
         {
-            Assert.IsTrue(homePage.LogoutIsNotExist());
+            Assert.IsTrue(loginPage.LogoutIsNotExist());
         }
 
         [When(@"I click Logout")]
         public void WhenIClickLogout()
         {
-            homePage.ClickLogout();
+            loginPage.ClickLogout();
         }
 
         [Then(@"I logout successfully")]
         public void ThenILogoutSuccessfully()
         {
-            Assert.IsTrue(homePage.LoginDisplayed());
+            Assert.IsTrue(loginPage.LoginDisplayed());
         }
 
 

@@ -40,12 +40,10 @@ namespace BuggyCarsSpecflow.SpecFlowSteps
             Assert.AreEqual(ConstantHelpers.RegisterPageUrl, webDriver.Url);
         }
 
-
-
-
-
-
-
-
+        [Given(@"I click on the Profile")]
+        public void GivenIClickOnTheProfile()
+        {
+            homePage.ClickProfile();
+        }
     }
 }
