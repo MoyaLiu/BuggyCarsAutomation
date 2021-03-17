@@ -46,12 +46,13 @@ namespace BuggyCarsSpecflow.Helpers
                 throw new WebDriverTimeoutException($"Wait for Click {by} failed");
             }
         }
-        public static void WaitForClickable( IWebDriver driver, IWebElement element, int timeOutinSeconds = 5)
+        public static IWebElement WaitForClickable( IWebDriver driver, IWebElement element, int timeOutinSeconds = 5)
         {
             try
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOutinSeconds));
                 wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(element));
+                return element;
             }
             catch (WebDriverTimeoutException)
             {
@@ -89,12 +90,13 @@ namespace BuggyCarsSpecflow.Helpers
             }
         }
 
-        public static void WaitForDisplayed(IWebDriver driver, IWebElement element, int timeOutinSeconds = 5)
+        public static IWebElement WaitForDisplayed(IWebDriver driver, IWebElement element, int timeOutinSeconds = 5)
         {
             try
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOutinSeconds));
                 wait.Until(d => element.Displayed == true);
+                return element;
             }
             catch (WebDriverTimeoutException)
             {
