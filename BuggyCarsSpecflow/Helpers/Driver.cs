@@ -8,37 +8,37 @@ namespace BuggyCarsSpecflow.Helpers
 {
     public class Driver
     {
-        public static IWebDriver driver { get; set; }
-
-        public void Initialize()
+        public static IWebDriver GetDriver()
         {
-            //Defining the browser
-            driver = new ChromeDriver();
-            TurnOnWait();
-            //Maximise the window
-            driver.Manage().Window.Maximize();
-        }
+            var browser = "Chrome";
+            IWebDriver driver = null;
+            switch (browser)
+            {
+                case "Chrome":
+                    driver = new ChromeDriver();
+                    break;
+            }
 
-        public static string BaseUrl
-        {
-            get { return ConstantHelpers.Url; }
-        }
-        //Implicit Wait
-        public static void TurnOnWait()
-        {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(8);
+            try
+            {
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
+                driver.Manage().Cookies.DeleteAllCookies();
+                driver.Manage().Window.Maximize();
 
-        }
+            }
+            catch (NullReferenceException e)
+            {
+                Console.WriteLine("Fail get driver. " + e);
+            }
+            return driver;
 
-        public static void NavigateUrl()
-        {
-            driver.Navigate().GoToUrl(BaseUrl);
         }
 
         //Close the browser
-        public void Close()
+        public static void Close(IWebDriver driver)
         {
             driver.Quit();
+            driver.Dispose();
         }
 
     }

@@ -339,5 +339,5 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-#TestReports
-MarsQA-1/TestReports/
+#Feature.cs
+**/*.feature.cs

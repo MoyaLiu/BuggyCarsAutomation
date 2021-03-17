@@ -21,7 +21,7 @@ namespace BuggyCarsSpecflow.Helpers
                 return null;
             }
         }
-        public static IWebElement WaitForElement(IWebDriver driver, By by, int timeOutinSeconds = 10)
+        public static IWebElement WaitForElement(IWebDriver driver, By by, int timeOutinSeconds = 5)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace BuggyCarsSpecflow.Helpers
             }
         }
 
-        public static void WaitForClickable(IWebDriver webDriver, By by, int timeOutinSeconds = 10)
+        public static void WaitForClickable(IWebDriver webDriver, By by, int timeOutinSeconds = 5)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace BuggyCarsSpecflow.Helpers
                 throw new WebDriverTimeoutException($"Wait for Click {by} failed");
             }
         }
-        public static void WaitForClickable(IWebElement element, IWebDriver driver, int timeOutinSeconds = 10)
+        public static void WaitForClickable( IWebDriver driver, IWebElement element, int timeOutinSeconds = 5)
         {
             try
             {
@@ -59,7 +59,7 @@ namespace BuggyCarsSpecflow.Helpers
             }
         }
 
-        public static bool WaitForVisible(IWebDriver webDriver, By by, int timeOutinSeconds = 10)
+        public static bool WaitForVisible(IWebDriver webDriver, By by, int timeOutinSeconds = 5)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace BuggyCarsSpecflow.Helpers
                 return false;
             }
         }
-        public static IWebElement WaitForDisplayed(IWebDriver driver, By by, int timeOutinSeconds = 10)
+        public static IWebElement WaitForDisplayed(IWebDriver driver, By by, int timeOutinSeconds = 5)
         {
             try
             {
@@ -89,7 +89,7 @@ namespace BuggyCarsSpecflow.Helpers
             }
         }
 
-        public static void WaitForDisplayed(IWebDriver driver, IWebElement element, int timeOutinSeconds = 10)
+        public static void WaitForDisplayed(IWebDriver driver, IWebElement element, int timeOutinSeconds = 5)
         {
             try
             {
