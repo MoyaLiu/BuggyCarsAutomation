@@ -34,11 +34,13 @@ namespace BuggyCarsSpecflow.SpecFlowSteps
         {
             homePage.ClickRegister();
         }
-        [Then(@"I should be navigate to '(.*)' page")]
-        public void ThenIShouldBeNavigateToPage(string registerUrl)
+        [Then(@"I should be navigate to Register page")]
+        public void ThenIShouldBeNavigateToRegisterPage()
         {
             Assert.AreEqual(ConstantHelpers.RegisterPageUrl, webDriver.Url);
         }
+
+
 
 
 
