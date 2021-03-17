@@ -17,8 +17,8 @@ namespace BuggyCarsSpecflow.Helpers
             }
             catch (NoSuchElementException ex)
             {
-                throw new NoSuchElementException($"Find element{by} failed" + ex.Message);
-                return null;
+               Console.WriteLine($"Find element{by} failed" + ex.Message);
+               return null;
             }
         }
         public static IWebElement WaitForElement(IWebDriver driver, By by, int timeOutinSeconds = 5)
@@ -65,12 +65,12 @@ namespace BuggyCarsSpecflow.Helpers
             try
             {
                 var wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(timeOutinSeconds));
-                wait.Until(ExpectedConditions.ElementIsVisible(by));
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(by));
                 return true;
             }
             catch (WebDriverTimeoutException)
             {
-                throw new WebDriverTimeoutException($"Wait for visible {by} failed");
+                Console.WriteLine($"Wait for visible {by} failed");
                 return false;
             }
         }

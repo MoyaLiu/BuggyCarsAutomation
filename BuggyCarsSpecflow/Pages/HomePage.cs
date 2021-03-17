@@ -55,6 +55,10 @@ namespace BuggyCarsSpecflow.Pages
         {
             ClickElement(LoginBtn);
         }
+        public void ClickLogout()
+        {
+            ClickElement(LogoutBtn);
+        }
         public void ClickMakeHref()
         {
             ClickElement(MakeHref);
@@ -77,6 +81,24 @@ namespace BuggyCarsSpecflow.Pages
         {
             InputText(PasswordInput, password);
         }
-
+        public bool LogoutDisplayed()
+        {
+            return ElementIsDisplayed(LogoutBtn);
+        }
+        public bool LoginDisplayed()
+        {
+            return ElementIsDisplayed(LoginBtn);
+        }
+        public bool LogoutIsNotExist()
+        {
+            if(LogoutBtn == null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
