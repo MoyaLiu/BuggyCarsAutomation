@@ -39,7 +39,7 @@ namespace BuggyCarsSpecflow.Helpers
             try
             {
                 var wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(timeOutinSeconds));
-                wait.Until(ExpectedConditions.ElementToBeClickable(by));
+                wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(by));
             }
             catch (WebDriverTimeoutException)
             {
@@ -95,7 +95,7 @@ namespace BuggyCarsSpecflow.Helpers
             try
             {
                 var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeOutinSeconds));
-                wait.Until(d => element.Displayed == true);
+                wait.Until(d => element.Displayed);
                 return element;
             }
             catch (WebDriverTimeoutException)

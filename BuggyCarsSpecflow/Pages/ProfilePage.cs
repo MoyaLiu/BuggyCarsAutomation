@@ -6,9 +6,9 @@ namespace BuggyCarsSpecflow.Pages
 {
     class ProfilePage : BasePage
     {
-        public ProfilePage(IWebDriver webDriver) : base(webDriver)
-        {
-        }
+        public ProfilePage(IWebDriver webDriver) : base(webDriver) { }
+
+        #region FindElement
         public IWebElement SaveBtn => WebDriverExtension.FindElement(webDriver, By.XPath("//button[@class='btn btn-default'][text()='Save']"));
         public IWebElement CancelBtn => WebDriverExtension.FindElement(webDriver, By.XPath("//a[@class='btn'][text()='Cancel']"));
         public IWebElement GenderInput => WebDriverExtension.FindElement(webDriver, By.Id("gender"));
@@ -18,7 +18,7 @@ namespace BuggyCarsSpecflow.Pages
         public IWebElement HobbyInput => WebDriverExtension.FindElement(webDriver, By.Id("hobby"));
         public IWebElement SuccessfulAlert => WebDriverExtension.FindElement(webDriver, By.XPath("//div[contains(text(),'The profile has been saved successful')]"));
         public IWebElement ErrorAlert => WebDriverExtension.FindElement(webDriver, By.XPath("//div[contains(text(),'Unknown error')]"));
-
+        #endregion
 
         public void ClickSave() => ClickElement(SaveBtn);
         public void ClickCancel() => ClickElement(CancelBtn);

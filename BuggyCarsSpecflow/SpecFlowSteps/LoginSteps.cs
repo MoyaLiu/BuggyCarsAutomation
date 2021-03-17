@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
 
-namespace BuggyCarsSpecflow.SpecFlowSteps.HomePagesSteps
+namespace BuggyCarsSpecflow.SpecFlowSteps
 {
     [Binding]
     public sealed class LoginSteps

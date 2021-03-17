@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
 
-namespace BuggyCarsSpecflow.SpecFlowSteps.ProfilePageSteps
+namespace BuggyCarsSpecflow.SpecFlowSteps
 {
     [Binding]
     public sealed class ProfilePageSteps

@@ -14,9 +14,9 @@ namespace BuggyCarsSpecflow.Hooks
     {
         private IWebDriver driver;
         private readonly IObjectContainer objectContainer;
-        public Hooks(IObjectContainer objectContainer)
+        public Hooks(IObjectContainer container)
         {
-            this.objectContainer = objectContainer;
+            objectContainer = container;
         }
         [BeforeScenario]
         public void Setup()
@@ -33,10 +33,6 @@ namespace BuggyCarsSpecflow.Hooks
             CommonMethods.test.Log(AventStack.ExtentReports.Status.Info, "Snapshot below: " + CommonMethods.test.AddScreenCaptureFromBase64String(img));
             CommonMethods.extent.Flush();
             Driver.Close(driver);
-            Console.WriteLine("...........Teardown");
-        }
-
-        
-
+        }     
     }
 }

@@ -6,6 +6,8 @@ namespace BuggyCarsSpecflow.Pages
 {
     class RegisterPage : BasePage
     {
+        public RegisterPage(IWebDriver webDriver) : base(webDriver) { }
+
         #region FindElement
         public IWebElement RegisterBtn => WebDriverExtension.FindElement(webDriver, By.XPath("//button[@class='btn btn-default'][text()='Register']"));
         public IWebElement CancelBtn => WebDriverExtension.FindElement(webDriver, By.XPath("//a[@class='btn'][text()='Cancel']"));
@@ -25,67 +27,20 @@ namespace BuggyCarsSpecflow.Pages
         public IWebElement PasswordLenthWrongAlert => WebDriverExtension.FindElement(webDriver, By.XPath("//*[contains(text(),'Password not long enough')]"));
         public IWebElement PasswordDonotMatchAlert => WebDriverExtension.FindElement(webDriver, By.XPath("//my-register/div/div/form/div[5]/div[contains(text(),'Passwords do not match')]"));
         #endregion
-        public RegisterPage(IWebDriver webDriver) : base(webDriver)
-        {
-        }
 
-
-        public void ClickRegister()
-        {
-            WebDriverExtension.WaitForClickable(webDriver, RegisterBtn).Click();
-        }
-        public void ClickCancel()
-        {
-            WebDriverExtension.WaitForClickable(webDriver, CancelBtn).Click();
-        }
-        #region Input
-        public void InputLoginName(String loginName)
-        {
-            InputText(LoginInput, loginName);
-        }
-        public void InputFirstName(String firstName)
-        {
-            InputText(FirstNameInput, firstName);
-        }
-        public void InputlastName(String lastName)
-        {
-            InputText(LastNameInput, lastName);
-        }
-        public void InputPassword(String password)
-        {
-            InputText(PasswordInput, password);
-        }
-        public void InputConfirmPassword(String confirmPassword)
-        {
-            InputText(ConfirmPasswordInput, confirmPassword);
-        }
-        #endregion
-        #region Alert
-        public String RegistSuccessfulAlertDisplayed()
-        {
-            return AlertDisplayed(RegisterSuccessfulAlert);
-        }
-        public String NoUserNameAlertDisplayed()
-        {
-            return AlertDisplayed(NoUsernameAlert);
-        }
-        public String NoFirstNameAlertDisplayed()
-        {
-            return AlertDisplayed(NoFirstNameAlert);
-        }
-        public String NoLastNameAlertAlertDisplayed()
-        {
-            return AlertDisplayed(NoLastNameAlert);
-        }
-        public String NoUpperLetterInPasswordAlertDisplayed()
-        {
-            return AlertDisplayed(NoUpperLetterInPasswordAlert);
-        }
-        public String PasswordLenthWrongAlertDisplayed()
-        {
-            return AlertDisplayed(PasswordLenthWrongAlert);
-        }
-        #endregion
+        public void ClickRegister() => ClickElement(RegisterBtn);
+        public void ClickCancel() => ClickElement(CancelBtn);
+        public void InputLoginName(String loginName) => InputText(LoginInput, loginName);
+        public void InputFirstName(String firstName) => InputText(FirstNameInput, firstName);
+        public void InputlastName(String lastName) => InputText(LastNameInput, lastName);
+        public void InputPassword(String password) => InputText(PasswordInput, password);
+        public void InputConfirmPassword(String confirmPassword) => InputText(ConfirmPasswordInput, confirmPassword);
+        public String RegistSuccessfulAlertDisplayed() => AlertDisplayed(RegisterSuccessfulAlert);
+        public String NoUserNameAlertDisplayed() => AlertDisplayed(NoUsernameAlert);
+        public String NoFirstNameAlertDisplayed() => AlertDisplayed(NoFirstNameAlert);
+        public String NoLastNameAlertAlertDisplayed() => AlertDisplayed(NoLastNameAlert);
+        public String NoUpperLetterInPasswordAlertDisplayed() => AlertDisplayed(NoUpperLetterInPasswordAlert);
+        public String PasswordLenthWrongAlertDisplayed() => AlertDisplayed(PasswordLenthWrongAlert);
 
 
     }

@@ -6,6 +6,8 @@ namespace BuggyCarsSpecflow.Pages
 {
     class HomePage : BasePage
     {
+        public HomePage(IWebDriver webDriver) : base(webDriver) { }
+
         #region FindElement
         public IWebElement RegisterBtn => WebDriverExtension.FindElement(webDriver, By.XPath("//a[@class='btn btn-success-outline'][text()='Register']"));
         public IWebElement MakeHref => WebDriverExtension.FindElement(webDriver, By.XPath("//a[contains(@href,'/make/c0bm09bgagshpkqbsuag')]"));
@@ -13,30 +15,11 @@ namespace BuggyCarsSpecflow.Pages
         public IWebElement OverallHref => WebDriverExtension.FindElement(webDriver, By.XPath("//a[contains(@href,'/overall')]"));
         public IWebElement ProfileBtn => WebDriverExtension.FindElement(webDriver, By.XPath("//a[@class='nav-link'][text()='Profile']"));
         #endregion
-        public HomePage(IWebDriver webDriver) : base(webDriver)
-        {
-        }
 
-        public void ClickRegister()
-        {
-            ClickElement(RegisterBtn);
-        }
-
-        public void ClickMakeHref()
-        {
-            ClickElement(MakeHref);
-        }
-        public void ClickModelHref()
-        {
-            ClickElement(ModelHref);
-        }
-        public void ClickOverallHref()
-        {
-            ClickElement(OverallHref);
-        }
-        public void ClickProfile()
-        {
-            ClickElement(ProfileBtn);
-        }
+        public void ClickRegister() => ClickElement(RegisterBtn);
+        public void ClickMakeHref() => ClickElement(MakeHref);
+        public void ClickModelHref() => ClickElement(ModelHref);
+        public void ClickOverallHref() => ClickElement(OverallHref);
+        public void ClickProfile() => ClickElement(ProfileBtn);
     }
 }

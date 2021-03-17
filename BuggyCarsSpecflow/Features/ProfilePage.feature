@@ -16,7 +16,7 @@ Scenario: Save with enter valid data
 	Then The '<Successful Message>' on profile displayed
 	Examples: 
 	| Gender | Age | Address | Phone   | Hobby   | Successful Message                    |
-	| F      | 20  | city    | 1111111 | Drawing | The profile has been saved successful |
+	| Female | 20  | city    | 1111111 | Drawing | The profile has been saved successful |
 
 @Profile @Positive
 Scenario: Cancel on the Profile page

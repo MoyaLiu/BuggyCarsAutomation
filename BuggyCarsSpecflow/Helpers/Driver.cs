@@ -31,9 +31,7 @@ namespace BuggyCarsSpecflow.Helpers
                 Console.WriteLine("Fail get driver. " + e);
             }
             return driver;
-
         }
-
         //Close the browser
         public static void Close(IWebDriver driver)
         {

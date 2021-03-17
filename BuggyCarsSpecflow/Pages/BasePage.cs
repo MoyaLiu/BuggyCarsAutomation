@@ -15,19 +15,12 @@ namespace BuggyCarsSpecflow.Pages
             webDriver = driver;
         }
         public bool ElementIsDisplayed(IWebElement element) => element.Displayed;
-
-        public String AlertDisplayed(IWebElement element)
-        {
-            return WebDriverExtension.WaitForDisplayed(webDriver, element).Text;
-        }
+        public String AlertDisplayed(IWebElement element) => WebDriverExtension.WaitForDisplayed(webDriver, element).Text;
         public void InputText(IWebElement element, String text)
         {
             element.Clear();
             element.SendKeys(text);
         }
-        public void ClickElement(IWebElement element)
-        {
-            WebDriverExtension.WaitForClickable(webDriver, element).Click();
-        }
+        public void ClickElement(IWebElement element) => WebDriverExtension.WaitForClickable(webDriver, element).Click();
     }
 }
