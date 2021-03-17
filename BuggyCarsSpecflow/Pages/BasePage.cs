@@ -14,17 +14,8 @@ namespace BuggyCarsSpecflow.Pages
         {
             webDriver = driver;
         }
-        public bool ElementIsDisplayed(IWebElement element)
-        {
-            if (element.Displayed)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        public bool ElementIsDisplayed(IWebElement element) => element.Displayed;
+
         public String AlertDisplayed(IWebElement element)
         {
             return WebDriverExtension.WaitForDisplayed(webDriver, element).Text;
