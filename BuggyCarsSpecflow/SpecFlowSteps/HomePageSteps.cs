@@ -45,5 +45,47 @@ namespace BuggyCarsSpecflow.SpecFlowSteps
         {
             homePage.ClickProfile();
         }
+        [When(@"I click on the Register")]
+        public void WhenIClickOnTheRegister()
+        {
+            homePage.ClickRegister();
+        }
+
+        [When(@"I click on the Popular Make")]
+        public void WhenIClickOnThePopularMake()
+        {
+            homePage.ClickMakeHref();
+        }
+
+        [Then(@"I should be navigate to Popular Make page")]
+        public void ThenIShouldBeNavigateToPopularMakePage()
+        {
+            Assert.AreEqual(ConstantHelpers.MakePageUrl, webDriver.Url);
+        }
+
+        [When(@"I click on the Popular Model")]
+        public void WhenIClickOnThePopularModel()
+        {
+            homePage.ClickModelHref();
+        }
+
+        [Then(@"I should be navigate to Popular Model page")]
+        public void ThenIShouldBeNavigateToPopularModelPage()
+        {
+            Assert.AreEqual(ConstantHelpers.ModelPageUrl, webDriver.Url);
+        }
+
+        [When(@"I click on the Overall Rating")]
+        public void WhenIClickOnTheOverallRating()
+        {
+            homePage.ClickOverallHref();
+        }
+
+        [Then(@"I should be navigate to Overall Rating page")]
+        public void ThenIShouldBeNavigateToOverallRatingPage()
+        {
+            Assert.AreEqual(ConstantHelpers.OverallPageUrl, webDriver.Url);
+        }
+
     }
 }

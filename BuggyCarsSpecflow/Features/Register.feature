@@ -3,10 +3,6 @@
 Background: 
 Given Launch to the Home page
 And I click on the Register
-
-@Register @Positive
-Scenario: Click Register
-	Then I should be navigate to Register page
 	
 @Register @Positive
 Scenario: Cancel Register
