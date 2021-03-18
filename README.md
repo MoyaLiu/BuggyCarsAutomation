@@ -3,14 +3,22 @@
 ## Description
 This repository is automation test for project [BuggyCars](https://buggy.justtestit.org/)
 
+## Test Approach
+1. Play around on the website and familiar with the functionalities
+2. Create Test Plan, Test Conditions and Test Cases to cover major functionalites grouped by pages
+3. According to the Test Plan, using POM design pattern and BDD to automate several important features
+4. Implementing automation tests with SpecFlow+NUnit
+
 ## Test Plan
 The scope of the test plan covers the functional test of basic functionalities.
 It can be found at [Buggy_Test_plan_and_Test_Cases.xlsx](https://github.com/MoyaLiu/BuggyCarsAutomation/blob/main/Buggy_Test_plan_and_Test_Cases.xlsx)
 
 ## Test Cases
-1. Home (Make, Rank, Overall rating)
-1. RegisterLogin
+1. Home
+1. Register/Login
 1. Profile
+1. Overall rating
+1. Car details
 
 ## Setup and Run
 ```
@@ -40,7 +48,10 @@ ID | Severity | Description | Result
 ## Test report
 Test report can be found at [`\BuggyCarsSpecflow\TestReports`](https://github.com/MoyaLiu/BuggyCarsAutomation/tree/main/BuggyCarsSpecflow/TestReports)
 There are 2 issues are found by automation test and report failure in the test report with screenshot:
+### Issue 03:
 ![image](https://user-images.githubusercontent.com/69458030/111579222-82ce0880-881a-11eb-871e-2bf619d8be4f.png)
+
+### Issue 04:
 ![image](https://user-images.githubusercontent.com/69458030/111579303-a7c27b80-881a-11eb-9dd9-53c5f27cc87f.png)
 
 
