@@ -18,19 +18,38 @@ namespace BuggyCarsSpecflow.SpecFlowSteps
         IWebDriver webDriver = null;
         LoginPage loginPage = null;
         OverallPage overallPage = null;
+        RegisterPage registerPage = null;
+        String LoginName = null;
         public CarDetailsSteps(IWebDriver driver)
         {
             webDriver = driver;
             carDetailPage = new CarDetailPage(webDriver);
             loginPage = new LoginPage(webDriver);
             overallPage = new OverallPage(webDriver);
+            registerPage = new RegisterPage(webDriver);
         }
 
-        [Given(@"I have logged in and on the Cardetail page")]
-        public void GivenIHaveLoggedInAndOnTheCardetailPage()
+        [Given(@"I register a new account with '(.*)','(.*)','(.*)', '(.*)' and '(.*)'")]
+        public void GivenIRegisterANewAccountWithAnd(string login, string firstName, string lastName, string password, string confirmPassword)
+        {
+            LoginName = login + CommonMethods.getRandomNumber().ToString();
+            webDriver.Navigate().GoToUrl(ConstantHelpers.HomePageUrl);
+            webDriver.Navigate().GoToUrl(ConstantHelpers.RegisterPageUrl);
+            registerPage.InputLoginName(LoginName);
+            registerPage.InputFirstName(firstName);
+            registerPage.InputlastName(lastName);
+            registerPage.InputPassword(password);
+            registerPage.InputConfirmPassword(confirmPassword);
+            registerPage.ClickRegister();
+        }
+
+        [Given(@"I logged in with '(.*)','(.*)'and go to the Car detail page")]
+        public void GivenILoggedInWithAndGoToTheCarDetailPage(string login, string password)
         {
             webDriver.Navigate().GoToUrl(ConstantHelpers.HomePageUrl);
-            loginPage.Login();
+            loginPage.InputLoginName(LoginName);
+            loginPage.InputPassword(password);
+            loginPage.ClickLogin();
             Thread.Sleep(2000);
             webDriver.Navigate().GoToUrl(ConstantHelpers.OverallPageUrl);
             overallPage.ClickLastCarItem();

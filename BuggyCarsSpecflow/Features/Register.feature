@@ -27,6 +27,5 @@ Scenario Outline: Not able to register with invalid data
 	When I click on the Register below
 	Then The '<Error Message>' displayed
 Examples: 
-| Login               | First Name | Last Name | Password | Confirm Password | Error Message                         |
-| NoNumericInPassword | Hello      | World     | qqqqqqWW | qqqqqqWW         | Password must have numeric characters |
-| PasswordLenthWrong  | Hello      | World     | 1122qq   | 1122qq           | Password not long enough              |
+| Login              | First Name | Last Name | Password | Confirm Password | Error Message            |
+| PasswordLenthWrong | Hello      | World     | 1122qq   | 1122qq           | Password not long enough |

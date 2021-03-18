@@ -1,6 +1,7 @@
 ﻿using BuggyCarsSpecflow.Helpers;
 using OpenQA.Selenium;
 using System;
+using System.Configuration;
 
 namespace BuggyCarsSpecflow.Pages
 {

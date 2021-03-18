@@ -35,7 +35,7 @@ namespace BuggyCarsSpecflow.SpecFlowSteps
         [Given(@"I enter data '(.*)','(.*)','(.*)', '(.*)' and '(.*)'")]
         public void GivenIEnterDataAnd(string login, string firstName, string lastName, string password, string confirmPassword)
         {
-            registerPage.InputLoginName(login);
+            registerPage.InputLoginName(login + CommonMethods.getRandomNumber().ToString());
             registerPage.InputFirstName(firstName);
             registerPage.InputlastName(lastName);
             registerPage.InputPassword(password);
