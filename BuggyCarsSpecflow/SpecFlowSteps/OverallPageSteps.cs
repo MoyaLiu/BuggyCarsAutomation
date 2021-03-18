@@ -45,5 +45,19 @@ namespace BuggyCarsSpecflow.SpecFlowSteps
             Assert.IsTrue(overallPage.NextPageBtnIsDisabled());
         }
 
+        [When(@"click the last one car in the list")]
+        public void WhenClickTheLastOneCarInTheList()
+        {
+            overallPage.ClickLastCarItem();
+        }
+
+
+        [Then(@"Navigate to the car details page")]
+        public void ThenNavigateToTheCarDetailsPage()
+        {
+            Assert.IsTrue(webDriver.Url.Contains(ConstantHelpers.modelPageUrlPrefix));
+        }
+
+
     }
 }

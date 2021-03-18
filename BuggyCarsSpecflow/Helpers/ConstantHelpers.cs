@@ -12,6 +12,7 @@ namespace BuggyCarsSpecflow.Helpers
         public static string ModelPageUrl = "https://buggy.justtestit.org/model/c0bm09bgagshpkqbsuag%7Cc0bm09bgagshpkqbsuh0";
         public static string OverallPageUrl = "https://buggy.justtestit.org/overall";
         public static string ProfilePageUrl = "https://buggy.justtestit.org/profile";
+        public static string modelPageUrlPrefix = "https://buggy.justtestit.org/model/";
 
         //ScreenshotPath
         public static string ScreenshotPath = CommonMethods.getCodeDirectory() + @"\TestReports\Screenshots\";

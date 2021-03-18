@@ -23,5 +23,11 @@ namespace BuggyCarsSpecflow.Pages
         public bool LogoutDisplayed() => ElementIsDisplayed(LogoutBtn);
         public bool LoginDisplayed() => ElementIsDisplayed(LoginBtn);
         public bool LogoutIsNotExist() => LogoutBtn == null;
+        public void Login()
+        {
+            InputLoginName("moya");
+            InputPassword("1122qqWW~");
+            ClickLogin();
+        }
     }
 }

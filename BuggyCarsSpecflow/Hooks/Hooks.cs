@@ -28,11 +28,16 @@ namespace BuggyCarsSpecflow.Hooks
         [AfterScenario]
         public void Teardown()
         {
-            CommonMethods.ExtentReports();
+
             string img = CommonMethods.SaveScreenShotClass.SaveScreenshot(driver, "Report");
-            CommonMethods.test.Log(AventStack.ExtentReports.Status.Info, "Snapshot below: " + CommonMethods.test.AddScreenCaptureFromBase64String(img));
-            CommonMethods.extent.Flush();
+            //CommonMethods.test.Log(AventStack.ExtentReports.Status.Info, "Snapshot below: " + CommonMethods.test.AddScreenCaptureFromBase64String(img));        
             Driver.Close(driver);
-        }     
+        }
+        [AfterFeature]
+        public static void GenerateTestReport()
+        {
+            CommonMethods.ExtentReports();
+            CommonMethods.extent.Flush();
+        }
     }
 }

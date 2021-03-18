@@ -26,11 +26,8 @@ namespace BuggyCarsSpecflow.SpecFlowSteps
         [Given(@"I have logged in")]
         public void GivenIHaveLoggedIn()
         {
-            loginPage.InputLoginName("moya");
-            loginPage.InputPassword("1122qqWW~");
-            loginPage.ClickLogin();
+            loginPage.Login();
         }
-
 
         [Then(@"I should be navigate to the Profile page")]
         public void ThenIShouldBeNavigateToTheProfilePage()
