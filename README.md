@@ -5,7 +5,7 @@ This repository is automation test for project [BuggyCars](https://buggy.justtes
 
 ## Test Plan
 The scope of the test plan covers the functional test of basic functionalities.
-It can be found at [Buggy_Test_plan_and_Test_Cases.xlsx]
+It can be found at [Buggy_Test_plan_and_Test_Cases.xlsx](https://github.com/MoyaLiu/BuggyCarsAutomation/blob/main/Buggy_Test_plan_and_Test_Cases.xlsx)
 
 ## Test Cases
 1. Home (Make, Rank, Overall rating)
@@ -38,7 +38,11 @@ ID | Severity | Description | Result
 04 | P1 | In Registeration page, complete the registeration | Expect result: should navigate to home page. Actual result: stay in register form
 
 ## Test report
-Test report can be found at `\BuggyCarsSpecflow\TestReports`
+Test report can be found at [`\BuggyCarsSpecflow\TestReports`](https://github.com/MoyaLiu/BuggyCarsAutomation/tree/main/BuggyCarsSpecflow/TestReports)
 There are 2 issues are found by automation test and report failure in the test report with screenshot:
+![image](https://user-images.githubusercontent.com/69458030/111579222-82ce0880-881a-11eb-871e-2bf619d8be4f.png)
+![image](https://user-images.githubusercontent.com/69458030/111579303-a7c27b80-881a-11eb-9dd9-53c5f27cc87f.png)
+
+
 
 
